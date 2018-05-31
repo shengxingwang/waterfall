@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<style>
+			.main-con{
+				position: relative;
+				width:1200;
+				margin:0 auto;
+			}
+			.main-con .item{
+				width:300px;
+				padding:20px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<h2 style="height:100px;line-height:100px;text-align:center;">瀑布流加载</h2>
+		<div id="conbox" class="main-con">
+			
+		</div>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/InfiniteLoad.js"></script>
+		<script>
+			function loadDataFun(){
+				var data =[{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				},{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				},{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				},{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				},{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				},{
+					imgUrl:'img/test.png'
+				},{
+					imgUrl:'img/lbg.png'
+				}];
+				return data;
+			}
+			var opt = {
+				parentBox:$("#conbox")[0],
+				prevLoadHeight:0,
+				childItem:'.item',
+				loadDataFun:loadDataFun,
+				itemWidth:300
+			}
+			var waterfall = new waterFall(opt);
+			waterfall.init();
+		</script>
+	</body>
+</html>
